@@ -26,7 +26,7 @@ class Inventory(models.Model):
                 pass
             else:
                  available = False
-                 message = item.model_no + "stock availability is : "+ str(product['count']-item.availability_count)
+                 message = item.model_no + " stock availability is : "+ str(product['count']-item.availability_count)
 
                  return available, message
 

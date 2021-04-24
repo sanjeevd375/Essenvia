@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "2df56269-85e9-498d-bcea-7b394d81fc28",
+		"name": "FlipZon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST Add Inventory Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category\": \"television\",\r\n    \"model_no\" : \"T2020UHD\",\r\n    \"availability_count\": \"12\",\r\n    \"price\":\"3899\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8000/inventory/product/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"inventory",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET List of Inventory Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/inventory/product/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"inventory",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Update Inventory Product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"availability_count\": \"13\",\r\n    \"price\":\"3899\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/inventory/product/1/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"inventory",
+						"product",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Specific Product from Inventory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/inventory/product/2/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"inventory",
+						"product",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Add Order for Item",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"order_details\": {\r\n        \"items\": [\r\n            {\r\n            \"model_no\": \"T20214K\",\r\n            \"count\": 2\r\n        }\r\n        ]\r\n    },\r\n    \"customer_details\": {\r\n        \"name\": \"Sanjeev Kumar Das\",\r\n        \"contact\": \"9040322012\",\r\n        \"email\": \"sanjeevd375@gmail.com\"\r\n    },\r\n    \"delivery_dist\": 3\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/order/neworder/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"order",
+						"neworder",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Order Status by Order Number",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/order/item/24042021_8770406298339",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"order",
+						"item",
+						"24042021_8770406298339"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

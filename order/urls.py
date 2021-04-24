@@ -3,7 +3,7 @@ from .views import *
 
 router = routers.DefaultRouter()
 
-router.register(r'neworder', OrderView, basename='neworders')
+router.register(r'item', OrderView, basename='items')
 
 urlpatterns = []
 urlpatterns += router.urls
