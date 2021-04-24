@@ -22,13 +22,19 @@ class Inventory(models.Model):
         message = 'OK'
         for product in data['items']:
             item = Inventory.objects.get(model_no=product['model_no'])
-            if item.availability_count >= product['count']:
-                pass
-            else:
-                 available = False
-                 message = item.model_no + " stock availability is : "+ str(product['count']-item.availability_count)
+            if product['count'] > 0:
+                if item.availability_count >= product['count']:
+                    pass
+                else:
+                    available = False
+                    message = item.model_no + " stock availability is : "+ str(product['count']-item.availability_count)
 
-                 return available, message
+                    return available, message
+            else:
+                available = False
+                message =" Kindly add atlease 1 quantity to order.)
+
+                return available, message        
 
         #Updating Inventory Products
         for product in data['items']:
